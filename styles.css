@@ -1,0 +1,66 @@
+@font-face {
+  font-family: 'righteous';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/Righteous-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'volkhov';
+    src: url('/fonts/Volkhov-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'volkhov';
+    src: url('/fonts/Volkhov-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'volkhov';
+    src: url('/fonts/Volkhov-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'volkhov';
+    src: url('/fonts/Volkhov-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 18px;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3f3f59;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #fafafa;
+}
+
+h1 {
+    font-family: righteous, serif;
+    font-size: 4rem;
+    letter-spacing: 0.1rem;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.lead {
+    font-family: volkhov;
+    font-size: 1.2rem;
+}
