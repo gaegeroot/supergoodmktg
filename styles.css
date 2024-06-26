@@ -47,16 +47,16 @@ body{
     align-items: center;
     justify-content: center;
     color: #3f3f59;
-    padding: 25px;
+    padding: 40px;
     box-sizing: border-box;
     background: #fafafa;
 }
 
 h1 {
     font-family: righteous, serif;
-    font-size: 4rem;
+    font-size: 5rem;
     letter-spacing: 0.1rem;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 40px;
 }
 
