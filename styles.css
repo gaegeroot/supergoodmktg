@@ -64,3 +64,13 @@ h1 {
     font-family: volkhov;
     font-size: 1.2rem;
 }
+
+@media all and (max-width: 767px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1.1rem;
+    }
+}
