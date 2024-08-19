@@ -1,0 +1,42 @@
+---
+// import Layout from '~/layouts/PageLayout.astro';
+import Layout from '~/layouts/ComingSoonPageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Super Good Marketing',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+
+  <Hero>
+    <Fragment slot="title">Super Good Marketing</br><span class="text-5xl">Dank marketing for dispe</span></Fragment>
+    <Fragment slot="subtitle">New stuff coming soon, don't worry 😉</Fragment>
+
+  </Hero>
+</Layout>
+
+<style>
+.hero::before {
+    content: "";
+    position: absolute;
+    background-image: url(https://www.pixcrafter.com/wp-content/uploads/2023/08/abstract-colorful-cloud-smoke-on-black-background.jpg);
+    background-size: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: opacity(0.2) blur(3px) grayscale(0.2);
+}</style>

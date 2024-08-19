@@ -1,6 +1,5 @@
 ---
-// import Layout from '~/layouts/PageLayout.astro';
-import Layout from '~/layouts/ComingSoonPageLayout.astro';
+import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -11,6 +10,8 @@ import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Form from '~/components/ui/Form.astro';
+import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
   title: 'Super Good Marketing',
@@ -19,11 +20,349 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
-
-  <Hero>
-    <Fragment slot="title">Super Good Marketing</br><span class="text-5xl">it's what we do</span></Fragment>
-    <Fragment slot="subtitle">New stuff coming soon, don't worry 😉</Fragment>
-
+  <Hero
+    actions={[
+      {
+        variant: 'tertiary',
+        text: 'Dig deeper...',
+        href: '/#problems',
+      },
+      { variant: 'primary', text: 'Get Started', href: '/#get-started' },
+    ]}
+  >
+    <Fragment slot="title">Super Good Marketing</Fragment>
+    <Fragment slot="subtitle">Dank marketing to help dispensaries grow (their business)</Fragment>
   </Hero>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="problems"
+    tagline="Let's be real"
+    title="Running a dispensary is hard"
+    subtitle="Every day presents new challenges and how you handle them could be the difference between sticking around or going up in smoke"
+    items={[
+      {
+        title: 'Not Enough Foot Traffic',
+        description:
+          "You know you've got great products, but getting people to walk through your doors is tough. Without the right exposure, it's easy to get lost in the crowd.",
+        icon: 'tabler:road',
+      },
+      {
+        title: 'Low Spend Per Visit',
+        description:
+          "Customers are stopping by, but they're not buying enough. Without effective ways to upsell and cross-sell, you're leaving money on the table.",
+        icon: 'tabler:coin',
+      },
+      {
+        title: 'One-Time Shoppers',
+        description:
+          "It's hard to keep customers coming back. Without a solid loyalty program or personalized follow-ups, they might visit once and never return.",
+        icon: 'tabler:repeat',
+      },
+      {
+        title: 'Weak Online Presence',
+        description:
+          "If your digital presence is lacking, potential customers won't even know you exist. A weak website or poor social media engagement can seriously hurt your growth.",
+        icon: 'tabler:device-desktop',
+      },
+      {
+        title: 'Unclear Brand Identity',
+        description:
+          'Standing out in a crowded market is essential, but hard to achieve. Without a unique brand voice and consistent messaging, your dispensary can blend into the background.',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Standing Out in a Crowded Market',
+        description:
+          'The dispensary market is packed, and making your brand stand out is no easy feat. Without a clear identity and targeted strategy, you can easily blend in with the competition.',
+        icon: 'tabler:users',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    items={[
+      {
+        title: 'Data-Driven Strategies',
+        description:
+          'Harnessing insights and analytics to drive smarter marketing decisions that fuel growth and boost ROI.',
+      },
+      {
+        title: 'Tailored Campaigns',
+        description: "Crafting custom marketing solutions that align with your dispensary's unique needs and goals.",
+      },
+      {
+        title: 'Comprehensive Support',
+        description:
+          'Offering end-to-end marketing services to ensure your dispensary thrives in a competitive landscape.',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/empty_shelves.webp',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-heading font-bold tracking-wide dark:text-default sm:text-3xl mb-2">
+        Lucky for you, we exist
+      </h3>
+      You focus on sourcing incredible product and providing exemplary service.<br />We'll get <strong
+        >people in the door and coming back for more</strong
+      >.
+    </Fragment>
+  </Content>
+
+  <!-- Services Widget **************** -->
+
+  <Features2
+    id="services"
+    title="So...what do we actually do?"
+    subtitle="We always put together a strategy specifically catered to your stage of growth, but these are some of the main areas we usually focus on"
+    items={[
+      {
+        title: 'SEO Optimization',
+        description:
+          'Boost your dispensary’s online visibility and rank higher in search results to attract more local customers.',
+        icon: 'flat-color-icons:search',
+      },
+      {
+        title: 'Social Media Management',
+        description:
+          'Engage your audience and build a loyal community with strategic social media content and campaigns.',
+        icon: 'flat-color-icons:like',
+      },
+      {
+        title: 'Website Development',
+        description: 'Create a stunning, user-friendly website that converts visitors into loyal customers.',
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Customer Retention Programs',
+        description: 'Increase repeat business with tailored loyalty programs and personalized marketing efforts.',
+        icon: 'flat-color-icons:manager',
+      },
+      {
+        title: 'Email Marketing',
+        description:
+          'Drive repeat business and nurture customer relationships with personalized, targeted email campaigns.',
+        icon: 'flat-color-icons:feedback',
+      },
+      {
+        title: 'E-Commerce Integration',
+        description: 'Seamlessly integrate e-commerce solutions to boost online sales and streamline operations.',
+        icon: 'flat-color-icons:shop',
+      },
+      {
+        title: 'PPC Advertising',
+        description: 'Get immediate results and maximize your ad spend with highly targeted pay-per-click campaigns.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Reputation Management',
+        description: 'Strengthen your brand by managing reviews and online presence to build a positive reputation.',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Content Marketing',
+        description:
+          'Attract, engage, and convert your audience with compelling content tailored to your brand and customer needs.',
+        icon: 'flat-color-icons:news',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Years of experience', amount: '19' },
+      { title: 'Projects', amount: '112' },
+      { title: 'Of Blunts', amount: '100s' },
+      { title: 'Revenue Generated', amount: '$10.8M+' },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    id="about"
+    columns={3}
+    items={[
+      {
+        icon: 'tabler:brand-instagram',
+        callToAction: {
+          target: '_blank',
+          text: 'Instagram',
+          href: 'https://www.instagram.com/supergaege',
+        },
+      },
+      {
+        icon: 'tabler:brand-threads',
+        callToAction: {
+          target: '_blank',
+          text: 'Threads',
+          href: 'https://www.threads.net/@supergaege',
+        },
+      },
+      {
+        icon: 'tabler:brand-youtube',
+        callToAction: {
+          target: '_blank',
+          text: 'Youtube',
+          href: 'https://www.youtube.com/channel/UCXJp0sjyJRqXjraL_AhB8mg',
+        },
+      },
+    ]}
+    image={{
+      src: '~/assets/images/me.jpg',
+      alt: 'Headshot of gaege',
+      loading: 'lazy',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold font-heading tracking-wide dark:text-primary sm:text-3xl mb-2">
+        Who is Super Good Marketing?
+      </h2>
+      <p>
+        My name is Gaege and I've been working professionally in the tech and digital marketing space for 12 years. What
+        started with building super basic websites in the early 2000s became a lifelong passion that has grown into
+        developing enterprise-level applications and marketing assets serving millions of users per year.
+      </p>
+      <br />
+      <p>
+        After years of serving all types of clients big and small as a freelancer, I decided to apply my technical and
+        managerial skills in a focused effort to help businesses in the fast-paced and complicated world of legal
+        cannabis products.
+      </p>
+      <br />
+      <p>
+        I look forward to helping your dispensary flourish and alleviating some of the stress that I know comes with
+        business ownership, especially in such a high-intensity industry.
+      </p>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="Take the next steps to elevate your dispensary"
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Consultation</span>',
+        description:
+          "We'll dig into your business and identify the areas where we are best able to help. This will give you additional clarity when thinking about how your business reaches and retains customers.",
+        icon: 'tabler:device-desktop-analytics',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Form an action plan</span>',
+        description:
+          "We'll organize a structured plan to tackle low-hanging fruit as quickly as possible for some early wins. Those will be followed by the longer-running efforts that will form the foundation of a successful customer acquisition and retention program.",
+        icon: 'tabler:clipboard-list',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Implementation & Reporting</span>',
+        description:
+          "We execute the plan, monitoring the results and reporting on what's working and what's not. This will help you to ensure that you are meeting your goals and staying ahead of the curve.",
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Profit!',
+        icon: 'tabler:currency-dollar',
+      },
+    ]}
+    image={{
+      src: '~/assets/images/dispensary-2.jpg',
+      alt: 'Successful dispensary',
+    }}
+  />
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <BlogLatestPosts
+    title="Learn more in The Nug"
+    information={'Get the latest updates on digital marketing strategies and tactics for growing dispensaries. Kick your marketing and operations up to the next level to attract more customers, sell more, and lower your costs.'}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Explore the following questions to understand how our digital marketing solutions can help your dispensary attract more customers, boost sales, and grow your business."
+    id="faqs"
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why Choose Our Dispensary Marketing Services?',
+        description:
+          'In an ever-evolving and highly regulated industry, dispensaries face unique challenges. Our specialized marketing services are designed to navigate these complexities, helping you build a strong brand presence, drive foot traffic, and increase customer loyalty.',
+      },
+      {
+        title: 'What Do I Need to Get Started?',
+        description:
+          'Getting started is easy! We’ll guide you through the process, beginning with an initial consultation to understand your dispensary’s goals, target audience, and current marketing efforts. From there, we’ll create a customized strategy tailored to your needs.',
+      },
+      {
+        title: 'How Does Digital Marketing Help Dispensaries?',
+        description:
+          'Effective digital marketing can transform your dispensary by reaching potential customers where they spend most of their time—online. From local SEO to targeted ad campaigns and email marketing, our strategies are proven to increase foot traffic and sales.',
+      },
+      {
+        title: 'How Do You Ensure Compliance with Cannabis Advertising Laws?',
+        description:
+          'We stay up-to-date with the latest regulations in the cannabis industry to ensure all marketing efforts are compliant. Our team understands the intricacies of cannabis advertising laws and will work with you to develop campaigns that are both effective and legally sound.',
+      },
+      {
+        title: 'What Kind of Results Can I Expect?',
+        description:
+          'Our clients typically see significant increases in website traffic, in-store visits, and average order value within the first few months of working with us. We track and report key performance metrics regularly, so you can see the impact of our efforts on your bottom line.',
+      },
+      {
+        title: 'How Do I Measure the Success of My Marketing Campaigns?',
+        description:
+          'We provide detailed analytics and reporting to track the success of your campaigns. Key performance indicators include website traffic, conversion rates, customer acquisition costs, and return on investment (ROI), ensuring you always know how your marketing dollars are performing.',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction id="get-started">
+    <Fragment slot="title"> Ready to take your dispensary to the next level? </Fragment>
+
+    <Fragment slot="subtitle">
+      <Form
+        inputs={[
+          {
+            type: 'text',
+            name: 'first_name',
+            placeholder: 'First Name',
+          },
+          {
+            type: 'email',
+            name: 'email',
+            placeholder: 'Email',
+          },
+          {
+            type: 'text',
+            name: 'name_of_dispensary',
+            placeholder: 'Name of Dispensary',
+          },
+        ]}
+        button="Get Started"
+      />
+    </Fragment>
+  </CallToAction>
 </Layout>
