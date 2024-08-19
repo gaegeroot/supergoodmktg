@@ -2,10 +2,10 @@
 import type { Form as Props } from '~/types';
 import Button from '~/components/ui/Button.astro';
 
-const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } = Astro.props;
+const { inputs, textarea, id, disclaimer, button = 'Contact us', description = '' } = Astro.props;
 ---
 
-<form>
+<form id={id} data-form-submit>
   {
     inputs &&
       inputs.map(
@@ -84,4 +84,5 @@ const { inputs, textarea, disclaimer, button = 'Contact us', description = '' } 
       </div>
     )
   }
+  <div id="form-message" class="mt-4 text-center text-sm"></div>
 </form>

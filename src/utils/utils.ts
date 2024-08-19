@@ -1,4 +1,5 @@
 import { I18N } from 'astrowind:config';
+import type { APIRoute } from 'astro';
 
 export const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(I18N?.language, {
   year: 'numeric',

@@ -159,4 +159,48 @@ import { UI } from 'astrowind:config';
     onLoad();
     onPageShow();
   });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const forms = document.querySelectorAll('[data-form-submit]');
+
+    forms.forEach((form) => {
+      console.log(form); // Check if the form element is correctly selected
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(form);
+        const messageContainer = form.querySelector('#form-message');
+
+        for (const [key, value] of formData.entries()) {
+          console.log(key, value); // Log each entry to debug
+        }
+
+        try {
+          const response = await fetch(
+            'https://script.google.com/macros/s/AKfycbySEgAwQUD7-EtMKCtctFazLY0Rzu8fHiYwGHknkAV66AY41scami_axHsro-sK_64F/exec',
+            {
+              method: 'POST',
+              body: formData,
+            }
+          );
+
+          if (response.ok) {
+            messageContainer.textContent = 'Rad! We\'ll get back to you real soon';
+            messageContainer.classList.add('text-emerald-600'); // Add success styling
+            messageContainer.classList.remove('text-red-600');
+            form.reset();
+          } else {
+            messageContainer.textContent = 'There was an issue submitting the form. Please refresh and try again.';
+            messageContainer.classList.add('text-red-600'); // Add error styling
+            messageContainer.classList.remove('text-emerald-600');
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          messageContainer.textContent = 'There was an issue submitting the form. Please refresh and try again.';
+          messageContainer.classList.add('text-red-600'); // Add error styling
+          messageContainer.classList.remove('text-emerald-600');
+        }
+      });
+    });
+  });
 </script>
