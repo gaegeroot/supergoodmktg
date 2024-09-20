@@ -63,7 +63,7 @@ export const headerData = {
     //   ],
     },
      {
-      text: 'The Nug',
+      text: 'The Blog',
       href: getBlogPermalink()
     //   links: [
     //     {
@@ -175,8 +175,8 @@ export const footerData = {
         { text: 'Privacy Policy', href: getPermalink('/privacy') },
     ],
     socialLinks: [
-        { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/supergoodmktg' },
-        { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/supergaege/' },
+        // { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/supergoodmktg' },
+        { ariaLabel: 'Instagram', target: '_blank', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/supergoodmarketing/' },
         { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/channel/UCXJp0sjyJRqXjraL_AhB8mg' },
         { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
     ],

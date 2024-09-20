@@ -54,7 +54,11 @@ export default defineConfig({
                     "feedback",
                     "shop",
                     "approval",
-                    'news'
+                    'news',
+                    'google',
+                    'bullish',
+                    'statistics',
+                    'collect'
                 ]
             },
         }),
