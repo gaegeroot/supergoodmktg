@@ -10,6 +10,8 @@ interface Props extends Widget {
   tagline?: string;
   callToAction?: CallToAction;
   actions?: string | CallToAction[];
+  backgroundImage?: string;
+  content?: string;
 }
 
 const {
@@ -17,17 +19,23 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   actions = await Astro.slots.render('actions'),
+  content = await Astro.slots.render('content'),
+  backgroundImage,
 
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+const backgroundStyle = backgroundImage
+  ? `background-image: url('${backgroundImage}'); background-size: cover; background-position: center;`
+  : '';
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
   <div
-    class="max-w-3xl mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600"
+    class="mx-auto text-center p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-600" style={backgroundStyle}
   >
     <Headline
       title={title}
@@ -54,5 +62,10 @@ const {
         </div>
       )
     }
+    {content && (
+      <div class="mt-8">
+        <Fragment set:html={content} />
+      </div>
+    )}
   </div>
 </WidgetWrapper>

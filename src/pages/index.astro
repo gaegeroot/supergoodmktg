@@ -69,13 +69,13 @@ const metadata = {
       {
         title: 'Analytics overload',
         description:
-          'Google Ads provides a wealth of data, but making sense of it all is overwhelming. You can\'t translate the numbers into actionable strategies to improve performance.',
+          "Google Ads provides a wealth of data, but making sense of it all is overwhelming. You can't translate the numbers into actionable strategies to improve performance.",
         icon: 'tabler:target',
       },
       {
         title: 'Competitor dominance',
         description:
-          'Your industry rivals seem to be everywhere in search results. No matter how you adjust your campaigns, you can\'t seem to gain ground in the AdWords auction.',
+          "Your industry rivals seem to be everywhere in search results. No matter how you adjust your campaigns, you can't seem to gain ground in the AdWords auction.",
         icon: 'tabler:users',
       },
     ]}
@@ -88,11 +88,12 @@ const metadata = {
       {
         title: 'ROI Maximization',
         description:
-          'We don\'t just run ads; we engineer campaigns for maximum return on investment. Our data-driven approach ensures every dollar spent works hard to grow your business.',
+          "We don't just run ads; we engineer campaigns for maximum return on investment. Our data-driven approach ensures every dollar spent works hard to grow your business.",
       },
       {
         title: 'Targeted Reach',
-        description: "Say goodbye to wasted ad spend. We pinpoint your ideal customers with laser precision, leveraging Google's advanced targeting options to put your message in front of those most likely to convert.",
+        description:
+          "Say goodbye to wasted ad spend. We pinpoint your ideal customers with laser precision, leveraging Google's advanced targeting options to put your message in front of those most likely to convert.",
       },
       {
         title: 'Scalable Growth',
@@ -120,42 +121,45 @@ const metadata = {
   <Features2
     id="services"
     title="So...what do we actually do?"
-   subtitle="We always put together a strategy specifically catered to your stage of growth, but these are some of the main areas we usually focus on"
-items={[
-  {
-    title: 'Google Ads Account Setup',
-    description:
-      'Create a robust Google Ads account from scratch, optimized for success with proper campaign structuring and settings.',
-    icon: 'flat-color-icons:google',
-  },
-  {
-    title: 'Keyword Research & Targeting',
-    description:
-      'Identify the most profitable and relevant keywords to target for your business, ensuring your ads reach the right audience.',
-    icon: 'flat-color-icons:search',
-  },
-  {
-    title: 'Ad Copywriting & Optimization',
-    description: 'Craft compelling, high-converting ad copy that aligns with user intent and maximizes click-through rates.',
-    icon: 'flat-color-icons:document',
-  },
-  {
-    title: 'Conversion Rate Optimization (CRO)',
-    description: 'Enhance landing pages and funnels to improve user experience and increase the percentage of ad traffic that converts.',
-    icon: 'flat-color-icons:bullish',
-  },
-  {
-    title: 'Performance Monitoring & Reporting',
-    description:
-      'Track campaign performance with detailed reporting and insights, allowing for data-driven optimization and budget adjustments.',
-    icon: 'flat-color-icons:statistics',
-  },
-  {
-    title: 'Remarketing Campaigns',
-    description: 'Re-engage potential customers who have visited your site by serving targeted ads across Google’s Display Network.',
-    icon: 'flat-color-icons:collect',
-  },
-]}
+    subtitle="We always put together a strategy specifically catered to your stage of growth, but these are some of the main areas we usually focus on"
+    items={[
+      {
+        title: 'Google Ads Account Setup',
+        description:
+          'Create a robust Google Ads account from scratch, optimized for success with proper campaign structuring and settings.',
+        icon: 'flat-color-icons:google',
+      },
+      {
+        title: 'Keyword Research & Targeting',
+        description:
+          'Identify the most profitable and relevant keywords to target for your business, ensuring your ads reach the right audience.',
+        icon: 'flat-color-icons:search',
+      },
+      {
+        title: 'Ad Copywriting & Optimization',
+        description:
+          'Craft compelling, high-converting ad copy that aligns with user intent and maximizes click-through rates.',
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Conversion Rate Optimization (CRO)',
+        description:
+          'Enhance landing pages and funnels to improve user experience and increase the percentage of ad traffic that converts.',
+        icon: 'flat-color-icons:bullish',
+      },
+      {
+        title: 'Performance Monitoring & Reporting',
+        description:
+          'Track campaign performance with detailed reporting and insights, allowing for data-driven optimization and budget adjustments.',
+        icon: 'flat-color-icons:statistics',
+      },
+      {
+        title: 'Remarketing Campaigns',
+        description:
+          'Re-engage potential customers who have visited your site by serving targeted ads across Google’s Display Network.',
+        icon: 'flat-color-icons:collect',
+      },
+    ]}
   >
     <Fragment slot="bg">
       <div class="absolute inset-0 dark:bg-transparent"></div>
@@ -222,11 +226,13 @@ items={[
       <br />
       <p>
         After years of serving all types of clients big and small as a freelancer, I decided to apply my technical and
-        managerial skills in a focused effort to help businesses in the fast-paced and complicated world of Google Ads strategy and execution.
+        managerial skills in a focused effort to help businesses in the fast-paced and complicated world of Google Ads
+        strategy and execution.
       </p>
       <br />
       <p>
-        I look forward to helping your business flourish and alleviating some of the stress that I know comes with business ownership, especially with our modern, highly-competitive landscape.
+        I look forward to helping your business flourish and alleviating some of the stress that I know comes with
+        business ownership, especially with our modern, highly-competitive landscape.
       </p>
     </Fragment>
 
@@ -260,7 +266,8 @@ items={[
       },
       {
         title: 'Profit!',
-        description: "Watch your Google Ads campaigns drive more qualified traffic, increase leads or sales, and improve your bottom line as we fine-tune every aspect of your ad strategy for maximum growth.",
+        description:
+          'Watch your Google Ads campaigns drive more qualified traffic, increase leads or sales, and improve your bottom line as we fine-tune every aspect of your ad strategy for maximum growth.',
         icon: 'tabler:currency-dollar',
       },
     ]}
@@ -321,31 +328,20 @@ items={[
 
   <!-- CallToAction Widget *********** -->
 
-  <CallToAction id="get-started">
+  <CallToAction id="get-started" backgroundImage='src/assets/images/abstract-green-bg.jpg'>
     <Fragment slot="title"> Ready to take your business to the next level? </Fragment>
 
-    <Fragment slot="subtitle">
-      <Form
-        inputs={[
-          {
-            type: 'text',
-            name: 'first_name',
-            placeholder: 'First Name',
-          },
-          {
-            type: 'email',
-            name: 'email',
-            placeholder: 'Email',
-          },
-          {
-            type: 'text',
-            name: 'name_of_dispensary',
-            placeholder: 'Name of business',
-          },
-        ]},
-        id="lead-form"
-        button="Get Started"
-      />
+    <Fragment slot="content">
+      <div
+        class="calendly-inline-widget"
+        data-url="https://calendly.com/supergoodmarketing/30min?primary_color=059669"
+        style="min-width:320px;height:900px;"
+      >
+      </div>
+      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     </Fragment>
+
   </CallToAction>
 </Layout>
+
+
